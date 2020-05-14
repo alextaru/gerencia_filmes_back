@@ -72,12 +72,9 @@ module.exports = {
     let { titulo } = req.params
     titulo = titulo + '%'
 
-    const filmes = await FilmesModel.findOne({
+    const filmes = await FilmesModel.findAll({
       where: { titulo: { [Op.like]: titulo } },
-      include: [
-        { association: 'atores' },
-        { association: 'diretores' }
-      ]
+      include: { association: 'diretores' }
     })
     return res.json(filmes)
   },
