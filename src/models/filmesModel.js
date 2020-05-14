@@ -4,7 +4,8 @@ class Filmes extends Model {
   static init (sequelize) {
     super.init({
       titulo: DataTypes.STRING,
-      ano: DataTypes.STRING
+      ano: DataTypes.INTEGER,
+      sinopse: DataTypes.STRING
     },
     {
       sequelize

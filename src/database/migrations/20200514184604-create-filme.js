@@ -17,6 +17,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      sinopse: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       diretor_id: {
         type: Sequelize.INTEGER,
         references: { model: 'diretores', key: 'id' },
